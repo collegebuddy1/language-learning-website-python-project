@@ -1,0 +1,665 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Yellowtail&display=swap');
+
+* {
+	margin: 0em;
+	padding: 0em;
+}
+
+html {
+    font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Nav bar */
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	background-color: #22a7f0;
+}
+
+
+
+/*Puts the words beside each other in nav bar*/
+nav ul {
+	display: flex;
+}
+
+/* Removes the list underline */
+nav li {
+	padding: 1em;
+    list-style: none;
+}
+
+nav li:hover, nav li:active {
+		transition: .1s;
+		background-color: #3DBBFF;
+	}
+
+/* Sub list with additional items	*/
+nav li ul {
+	display: none;
+	margin-top: .5em;
+	background-color: #3DBBFF;
+}
+
+/* Display items in the sub list	*/
+#list_container:hover ul, #list_container:active ul {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right:0;
+	width: 50%;
+	color: white;
+	background-color: #3DBBFF;
+}
+
+/* Separates each word in nav bar */
+nav a {
+	display: block;
+	color: white;
+}
+
+nav button {
+	margin-left: 1em;
+	padding: .2em .5em .2em .5em;
+	overflow: hidden;
+	border: none;
+	border-radius: 1em;
+	background-color: white;
+}
+
+nav button:focus {
+	outline: none;
+}
+
+nav button img {
+	position: relative;
+	transition: 1s;
+	overflow: hidden;
+
+}
+
+.animation_down {
+	transform: translateY(120%);
+
+}
+
+body {
+	background-color: white;
+	color: black;
+	transition: color, background-color 1s ease-in-out;
+}
+
+/* Section */
+/* For every section after the hero image */
+.hero_image ~ section {
+    margin: 2em 5% 0em 5%;
+	padding: 4em;
+	font-family: 'Oswald', sans-serif;
+	border-bottom: .1em solid rgba(0, 0, 0, .1);
+}
+
+
+
+/* For sections inside sections, primarily in basics.html */
+section section {
+	margin-top: 3em;
+}
+
+section ul li {
+	list-style: none;
+	margin-top: 1em;
+}
+
+section ul li:first-of-type {
+	margin-top: 2em;
+}
+
+h1 {
+	font-family: 'Oswald', sans-serif;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	margin-top: 1em;
+}
+
+p + p {
+	margin-top: 2em;
+}
+
+audio {
+	margin-top: 3em;
+	max-width: 100%;
+}
+
+/* Figure */
+figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+figure img {
+	max-width: 40%;
+}
+
+figure img[id^="tone_image"] {
+	max-width: 100%;
+}
+
+
+/*== Icons Class ==*/
+.icons {
+/*	Gap between text and images */
+	position: relative;
+    margin-top: 5em;
+    text-align: center;
+}
+
+.icons img {
+	margin-top: 2em;
+  	width: 80%;
+}
+
+.icons figure img {
+	filter: grayscale(80%);
+	transition: all .5s ease-in-out;
+}
+
+.icons figure img:hover {
+	filter: grayscale(0%);
+	transform: scale(1.1) translateY(-1em);
+	transition: all .5s ease-in-out;
+}
+
+figcaption {
+	font-family: 'Roboto', sans-serif;
+	color: black;
+}
+
+
+/*== Vocabulary Class ==*/
+
+.vocabulary table {
+	color: black;
+}
+
+
+/*==== Tables ====*/
+table {
+	margin: 2em auto 3em auto;
+	width: 90%;
+	color: black;
+	background-color: white;
+	box-shadow:1em 1em .5em rgba(0,0,0,.3);
+}
+
+caption {
+	margin-top: 2em;
+	caption-side: bottom;
+}
+
+th {
+	font-family: 'Oswald', sans-serif;
+	padding: 1.2em;
+}
+
+th:nth-child(odd) {
+	color:white;
+	background-color: #e95846;
+}
+
+th:nth-child(even) {
+	color: white;
+	background-color: #3DBBFF;
+}
+
+tr {
+	text-align: center;
+}
+
+tr:nth-child(odd) {
+	background-color: #F0F0F0;
+}
+
+td {
+	font-family: 'Roboto', sans-serif;
+	padding: .8em;
+}
+
+
+/*==== Forms ====*/
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	width: 60%;
+	margin: auto;
+	padding: 4em;
+	border: .1em solid rgba(0, 0, 0, .3);
+	border-radius: 1em;
+	color: white;
+	background-color: #22A8F0;
+	box-shadow:1em 1.5em 0em rgba(0,0,0,.1);
+}
+
+/*Fix form min size*/
+
+form h1 {
+	padding-bottom: 1em;
+}
+
+form p {
+	text-decoration: underline;
+	color: white;
+	text-align: center;
+}
+
+/* Forgot Password text*/
+form p + p {
+	visibility: hidden;
+	color: white;
+	text-decoration: none;
+}
+
+form li {
+	padding-top: 2em;
+}
+
+form li a {
+	font-family: 'Oswald', sans-serif;
+	text-decoration: underline;
+	width: 100%;
+	color: white;
+}
+
+form p:hover + p, form p:hover + p {
+	visibility: visible;
+}
+
+input {
+	width: 100%;
+	margin: .3em;
+	padding: .1em
+}
+
+input[type='text'] {
+	background-image: url("icons/user-circle.svg");
+	background-repeat: no-repeat;
+	padding-left: 2em;
+	padding-top: .5em;
+}
+
+input[type='password'] {
+	background-image: url("icons/padlock.svg");
+	background-repeat: no-repeat;
+	padding-left: 2em;
+	padding-top: .5em;
+}
+
+input[type='text'], input[type='password'] {
+	border-radius: 1em;
+}
+
+input[type='submit'] {
+	margin-top: 1em;
+	padding: .5em;
+	outline: none;
+	background-color: white;
+	border: none;
+	border-radius: 1em;
+	box-shadow: .4em .4em .5em  #000;
+}
+
+input[type='submit']:active {
+	transform: scale(.95);
+	outline: none;
+	margin-top: 1em;
+	box-shadow: .1em .2em 0em #000;
+}
+
+
+
+/* Quiz */
+/* Class which allows for items to be hidden/unhidden */
+.hidden_items {
+	visibility: hidden;
+}
+
+.hidden_items + section {
+	text-align: center;
+}
+
+/* Container for the questions */
+#outer_box {
+	margin: 2em auto 10em auto;
+	padding: 2em;
+	max-width: 50%;
+	color: white;
+	background-color: #22a7f0;
+	box-shadow:1em 1.5em .5em rgba(0,0,0,.1);
+	text-align: center;
+}
+
+#outer_box h1 {
+	color: white;
+	margin-bottom: 1em;
+}
+
+
+#outer_box a {
+	margin: 1em;
+	padding: .2em;
+	border: solid .2em #FFF;
+	color: black;
+	background-color: white;
+}
+
+/* Area where each question is printed */
+#question_text {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+#start {
+	background-color: white;
+	padding: 1em;
+	border:none;
+	border-radius: 1em;
+	box-shadow:.1em .1em 0em rgba(0,0,0,.1);
+}
+
+#answer_area {
+	padding: 2em;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.button {
+	flex: 1 0 50%;
+	max-width: 50%;
+	font-size: 1.3em;
+	color: black;
+	background-color: white;
+	margin: 2em;
+	padding: 1em .5em 1em .5em;
+	border: none;
+	border-radius: 1em;
+	box-shadow: 0em 0em .3em;
+	transition: all .4s ease;
+}
+
+.button:hover {
+	transform: scale(1.05);
+	transform: translateY(-.5em);
+	box-shadow: 0em .2em .5em;
+	transition: all .4s ease;
+}
+
+.button:focus {
+	outline: none;
+}
+
+
+/*==== Intro Page ====*/
+#intro_page body {
+	color: white;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#intro_page section {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#intro_page section button {
+	max-width: 20%;
+}
+
+/*==== Form Page ====*/
+.form_page section:first-of-type {
+	margin: 4em;
+	padding: 4em;
+}
+
+.form_page h1 {
+	margin-top: 2em;
+}
+
+/* Hero Image */
+.hero_image {
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url("images/photos/keyboard.jpg");
+		background-size: cover;
+	padding: 2em;
+	color: white;
+}
+
+
+/*==== Choice page ====*/
+#choice section:first-of-type {
+	margin: 6em 15% 0em 15%;
+	padding-bottom: 4em;
+	border-bottom: .1em solid rgba(0, 0, 0, .1);
+}
+
+#choice section:nth-of-type(2) {
+		justify-content: center;
+}
+
+
+/*==== Intro Page ====*/
+#intro_page {
+		height: 90vh;
+        margin: 2em;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url("images/illustrations/landscapebrightsun.png") repeat no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+		align-items: center;
+		color: white;
+}
+
+#intro_page h1 {
+	text-align: center;
+	word-spacing: 100vw;
+	font-family: 'Oswald', sans-serif;
+}
+
+#intro_page i {
+	font-family: 'Yellowtail', sans-serif;
+	font-size: 1.5em;
+}
+
+#intro_page button {
+	padding: .5em;
+	border-radius: .5em;
+	background-color: white;
+}
+
+/*==== Profile Page ====*/
+#profile section {
+	margin-top: 10em;
+	text-align: center;
+}
+
+
+/*==== Logout Page ====*/
+#logout {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#logout section:first-of-type {
+	margin: 5em;
+	padding: 3em;
+
+	border-radius: 1em;
+	color: white;
+	background-color: #3DBBFF;
+	text-align: center;
+}
+
+#logout a {
+	color: white;
+	text-decoration: underline;
+}
+
+/*==== Night Mode Settings ====*/
+.night-mode {
+	background-color: #2e3131;
+	color: white;
+	transition: color, background-color  1s ease-in-out;
+}
+
+.night-general {
+	color: white;
+	transition: color 1s ease-in-out;
+}
+
+.night-mode-table {
+	background-color: black;
+	color: white;
+	transition: color 1s ease-in-out;
+}
+
+/* 50em Media Query*/
+@media screen and (min-width: 50em) {
+	/* Nav Bar	*/
+	/* Makes the nav bar sticky */
+	nav {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		font-size: 1.2em;
+	}
+
+	nav li {
+		position: relative;
+	}
+
+	nav li:hover {
+		transition: .05s;
+		background-color: #3DBBFF;
+	}
+	main {
+		margin-top: 4em;
+	}
+
+	.hero_image ~ section {
+	    margin: 2em 15% 0em 15%;
+	}
+	/* Holder for second set of ULs in Nav Bar	*/
+	#list_container {
+		padding: 1em 2em 1em 2em;
+	}
+
+	#list_container:hover ul {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		left:0;
+		/* Allows the box to take up one twice the size of its parent */
+		width: 200%;
+		color: white;
+		background-color: #3DBBFF;
+	}
+
+
+	nav a {
+		/* Spreads words out more for bigger screen */
+        padding: 0em 3em 0em 3em;
+    }
+
+
+	figure img {
+		max-width: 70%;
+	}
+
+	figure img[id^="tone_image"] {
+		width: 70%;
+	}
+
+	/*==== Table ====*/
+	table {
+		width: 50%;
+		overflow: hidden;
+	}
+
+	th {
+		overflow:hidden
+	}
+
+
+	/* Forms */
+	form {
+		padding: 6em;
+		width: 15%;
+	}
+
+	/* Quiz */
+	.button {
+		flex: 1 0 50%;
+		max-width: 30%;
+		min-width: 28%;
+	}
+
+	/*	Hero Images */
+	.hero_image {
+		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url("images/photos/keyboard.jpg");
+		background-size: cover;
+		margin: 0em;
+		padding: 5em;
+		height: 35vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.hero_image h1, .hero_image p {
+		font-size: 1.5em;
+	}
+
+	/*	Icons */
+	.icons {
+		display: flex;
+	}
+
+	.icons img {
+		margin: 0em;
+		max-width: 100%;
+	}
+
+
+    /* Pages */
+	.form_page body {
+		background: url("icons/form.svg"), url("icons/setup.svg");
+		background-position: right bottom, 5%;
+		background-repeat: no-repeat;
+		background-size: 35%, 25%;
+	}
+
+	.form_page {
+		/* Matches height to that of the viewport, to stretch the container down */
+		height: 100vh;
+	}
+
+	#logout body {
+		height: 100vh;
+		background: url("icons/form.svg"), url("icons/setup.svg");
+		background-position: right bottom, 5%;
+		background-repeat: no-repeat;
+		background-size: 35%, 25%;
+	}
